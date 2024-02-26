@@ -68,6 +68,7 @@
             lost:0,
             tie:0,
             displayScore(){
+                localStorage.setItem('Score', JSON.stringify(scoreObj));//stored the score in localStorage
                 return `Won: ${scoreObj.won} Lost: ${scoreObj.lost} Tie: ${scoreObj.tie}`;
             },//obj function
         };
