@@ -26,7 +26,7 @@
         result='Computer Won';
     }
 
-    alert(`You choosen bat, Computer choosen ${compChoice}. ${result}! \n Won: ${scoreObj.won} Lost: ${scoreObj.lost} Tie: ${scoreObj.tie}`);
+    alert(`You choosen bat, Computer choosen ${compChoice}. ${result}! \n ${scoreObj.displayScore()}`);
     ">Bat</button>
 
     <button onclick="
@@ -42,7 +42,7 @@
         result='User Won';
     }
 
-    alert(`You choosen Ball, Computer choosen ${compChoice}. ${result}! \n Won: ${scoreObj.won} Lost: ${scoreObj.lost} Tie: ${scoreObj.tie}`);
+    alert(`You choosen Ball, Computer choosen ${compChoice}. ${result}! \n ${scoreObj.displayScore()}`);
     ">Ball</button>
 
     <button onclick="
@@ -58,7 +58,7 @@
         result='Its a Tie';
     }
 
-    alert(`You choosen Stump, Computer choosen ${compChoice}. ${result}! \n Won: ${scoreObj.won} Lost: ${scoreObj.lost} Tie: ${scoreObj.tie}`);
+    alert(`You choosen Stump, Computer choosen ${compChoice}. ${result}! \n ${scoreObj.displayScore()}`);//obj func calling
 
     ">Stump</button>
 
@@ -67,7 +67,10 @@
             won:0,
             lost:0,
             tie:0,
-        }
+            displayScore(){
+                return `Won: ${scoreObj.won} Lost: ${scoreObj.lost} Tie: ${scoreObj.tie}`;
+            },//obj function
+        };
         let compChoice;
         function generateCompChoice(){
             let randomNum = Math.random() *3;
