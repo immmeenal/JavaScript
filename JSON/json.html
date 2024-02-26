@@ -7,7 +7,8 @@
 </head>
 <body>
     <script>
-        let product ={
+        //JSON
+        /*let product ={
             name : 'Tshirt',
             price: 400,
             ratings:{
@@ -27,7 +28,29 @@
         let obj = JSON.parse(str);
 
         console.log(typeof obj);
-        console.log(obj);
+        console.log(obj);*/
+
+        //Local Storage  // browser->inspect->application->local storage
+        
+        //localStorage.setItem('Name', 'Minal Chhatre');
+        //console.log(localStorage.getItem('Name'));
+
+        let product ={
+            name : 'Tshirt',
+            price: 400,
+            ratings:{
+                stars: 4.5,
+                noOfReviews:200,
+            },
+        };
+        localStorage.setItem('product', JSON.stringify(product));
+        console.log(localStorage.getItem('product'));
+        let product2 = JSON.parse(localStorage.getItem('product'));
+        console.log(product2);
+
+        localStorage.removeItem('Name');
+        localStorage.clear();
+
     </script>
 </body>
 </html>
