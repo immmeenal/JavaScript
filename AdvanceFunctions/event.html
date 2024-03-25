@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myButton" >
+        click-me
+    </button>
+</body>
+<script>
+    let buttonElement = document.querySelector('#myButton');
+    buttonElement.addEventListener('click',event => {console.log('I am Clicked')});
+    //buttonElement.addEventListener('click',event => {console.log(new Date())});
+    let behavior = event => {console.log(new Date())};
+    buttonElement.addEventListener('click',behavior);
+    buttonElement.removeEventListener('click', behavior);
+</script>
+</html>
